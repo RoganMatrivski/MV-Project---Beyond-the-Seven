@@ -41,7 +41,7 @@ Transform:
   m_GameObject: {fileID: 1145242857938100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -115,6 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRewinding: 0
+  velocityBefore: {x: 0, y: 0, z: 0}
+  velocityAfter: {x: 0, y: 0, z: 0}
+  count: 0
 --- !u!114 &114217110670939318
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -16,6 +16,8 @@ public class MapLoader : MonoBehaviour {
 
     public TextAsset mapText;
 
+    public float defaultSpeed = 10f;
+
     // Use this for initialization
     void Start()
     {
@@ -143,7 +145,7 @@ public class MapLoader : MonoBehaviour {
             Vector3 randRot = new Vector3(Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier));
             //Debug.Log(randRot);
 
-            Transform obj = Instantiate(PoleObj);
+            Transform obj = Instantiate(PoleObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
             if (launchToCamera)
             {
                 var dir = GameObject.FindGameObjectWithTag("MainCamera").transform.position - transform.position;
@@ -173,7 +175,7 @@ public class MapLoader : MonoBehaviour {
             Vector3 randRot = new Vector3(Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier));
             //Debug.Log(randRot);
 
-            Transform obj = Instantiate(SphereObj);
+            Transform obj = Instantiate(SphereObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
 
             if (launchToCamera)
             {
@@ -208,7 +210,7 @@ public class MapLoader : MonoBehaviour {
             Vector3 randRot = new Vector3(Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier));
             //Debug.Log(randRot);
 
-            Transform obj = Instantiate(GiantSphereObj);
+            Transform obj = Instantiate(GiantSphereObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
 
             if (launchToCamera)
             {
@@ -295,6 +297,8 @@ public class MapLoader : MonoBehaviour {
 
                         if (obj[2] >= 0)
                             tempObj.SpawnSpeed = obj[2];
+                        else
+                            tempObj.SpawnSpeed = defaultSpeed;
 
                         if (obj[3] == 1)
                             tempObj.spawnToCamera = true;

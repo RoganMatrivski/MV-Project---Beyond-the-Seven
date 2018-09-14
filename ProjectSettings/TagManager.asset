@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MasterTick
   - RewindControl
+  - SpawnedObject
   layers:
   - Default
   - TransparentFX

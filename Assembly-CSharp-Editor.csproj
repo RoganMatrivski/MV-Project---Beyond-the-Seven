@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CinemachinePostProcessingV2\Editor\CinemachinePostProcessingEditor.cs" />
+    <Compile Include="Assets\Kino\Glitch\Editor\AnalogGlitchEditor.cs" />
+    <Compile Include="Assets\Kino\Glitch\Editor\DigitalGlitchEditor.cs" />
     <Reference Include="Cinemachine">
       <HintPath>C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>

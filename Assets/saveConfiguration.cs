@@ -4,6 +4,8 @@ using UnityEngine;
 
 using Newtonsoft.Json;
 
+using UnityEngine.SceneManagement;
+
 public class saveConfiguration : MonoBehaviour {
     private MasterTick masterTick;
 
@@ -18,7 +20,7 @@ public class saveConfiguration : MonoBehaviour {
 
 	}
 
-    void saveConf()
+    public void saveConf()
     {
         config conf = new config();
 
@@ -30,13 +32,6 @@ public class saveConfiguration : MonoBehaviour {
             serializer.Serialize(file, conf);
         }
 
-        //insert command to go to next area.
+        SceneManager.LoadScene("LoadingScene", LoadSceneMode.Single);
     }
-}
-
-
-//TODO : move this to new file.
-struct config
-{
-    public int offset;
 }

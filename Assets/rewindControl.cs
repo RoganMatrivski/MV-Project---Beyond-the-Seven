@@ -14,4 +14,12 @@ public class rewindControl : MonoBehaviour {
         if (Input.GetKeyUp(keyToPress))
             rewind = false;
 	}
+
+    public void toggleRewind()
+    {
+        if (rewind)
+            rewind = false;
+        else
+            rewind = true;
+    }
 }

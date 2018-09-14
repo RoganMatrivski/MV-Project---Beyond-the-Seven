@@ -15,7 +15,7 @@ public class SpinnerObject : MonoBehaviour {
 	void Update () {
         //float rot = transform.rotation.eulerAngles.y + spinningSpeed;
         //transform.Rotate(new Vector3());
-        transform.Rotate(new Vector3(spinningSpeed, 0, 0));
+        transform.Rotate(new Vector3(0, 0, spinningSpeed));
 
     }
 }

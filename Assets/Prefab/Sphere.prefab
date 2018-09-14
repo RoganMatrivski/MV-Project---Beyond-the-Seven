@@ -128,6 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRewinding: 0
+  velocityBefore: {x: 0, y: 0, z: 0}
+  velocityAfter: {x: 0, y: 0, z: 0}
+  count: 0
 --- !u!114 &114800504709227344
 MonoBehaviour:
   m_ObjectHideFlags: 1

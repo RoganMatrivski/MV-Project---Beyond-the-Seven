@@ -342,4 +342,6 @@
 -d:ENABLE_VSTU
 -d:UNITY_POST_PROCESSING_STACK_V2
 -i:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/CinemachinePostProcessingV2/Editor/CinemachinePostProcessingEditor.cs
+-i:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/Kino/Glitch/Editor/AnalogGlitchEditor.cs
+-i:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/Kino/Glitch/Editor/DigitalGlitchEditor.cs
 -v:0

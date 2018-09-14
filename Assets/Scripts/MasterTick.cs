@@ -42,8 +42,15 @@ public class MasterTick : MonoBehaviour
     [HideInInspector]
     public double timePerTick;
 
+    [HideInInspector]
+    public double timePerBeat;
+
     [SerializeField]
     AudioSource song;
+
+    [SerializeField]
+    [Range(0, 5)]
+    float audioRate;
 
     void Start()
     {
@@ -63,9 +70,17 @@ public class MasterTick : MonoBehaviour
         if (!running)
             return;
 
+        UnityMainThreadDispatcher.Instance().Enqueue(() =>
+        {
+            song.pitch = audioRate;
+            Time.timeScale = audioRate;
+        });
+
+        timePerBeat = 60.0f / bpm;
+
         timePerTick = 60.0f / bpm / (float)Subdivide;
 
-        double samplesPerTick = sampleRate * 60.0F / bpm * (1.0f / (double)Subdivide); // change 1.0F to
+        double samplesPerTick = sampleRate * 60.0F / bpm * (1.0f / (double)Subdivide) / audioRate; // change 1.0F to
         double sample = (AudioSettings.dspTime + ((float)offset / 1000)) * sampleRate;
         int dataLen = data.Length / channels;
         int n = 0;

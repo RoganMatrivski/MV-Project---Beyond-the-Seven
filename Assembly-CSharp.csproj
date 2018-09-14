@@ -62,15 +62,23 @@
   <ItemGroup>
     <Compile Include="Assets\AnimationPlayeer.cs" />
     <Compile Include="Assets\CinemachinePostProcessingV2\CinemachinePostProcessing.cs" />
+    <Compile Include="Assets\circAnim.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+    <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
+    <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
     <Compile Include="Assets\rewindControl.cs" />
     <Compile Include="Assets\saveConfiguration.cs" />
+    <Compile Include="Assets\sceneAnimator.cs" />
+    <Compile Include="Assets\Scripts\AnimateDiamond1.cs" />
     <Compile Include="Assets\Scripts\camAnimator.cs" />
     <Compile Include="Assets\Scripts\changeOffset.cs" />
+    <Compile Include="Assets\Scripts\ChangeScene.cs" />
+    <Compile Include="Assets\Scripts\ConfStruct.cs" />
     <Compile Include="Assets\Scripts\Despawn.cs" />
     <Compile Include="Assets\Scripts\Despawn_EventBased.cs" />
     <Compile Include="Assets\Scripts\FileToMap.cs" />
+    <Compile Include="Assets\Scripts\GlitchController.cs" />
     <Compile Include="Assets\Scripts\MapContainer.cs" />
     <Compile Include="Assets\Scripts\MapContainerEditor.cs" />
     <Compile Include="Assets\Scripts\MapLoader.cs" />
@@ -98,8 +106,10 @@
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Kino\Glitch\Shader\AnalogGlitch.shader" />
     <None Include="Assets\Z_GlitchFX\GlitchShader.shader" />
     <None Include="Assets\Shader\Test1.shader" />
+    <None Include="Assets\Kino\Glitch\Shader\DigitalGlitch.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\result 3.txt" />
