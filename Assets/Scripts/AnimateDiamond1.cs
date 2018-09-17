@@ -44,7 +44,7 @@ public class AnimateDiamond1 : MonoBehaviour {
         Tween tweenCont = null;
         var dispatch = UnityMainThreadDispatcher.Instance();
 
-        tick++;
+        tick = MasterTick.tick;
         switch (tick)
         {
             case 256:
@@ -65,7 +65,7 @@ public class AnimateDiamond1 : MonoBehaviour {
                     {
                         tweenCont.Kill();
                         GetComponent<SpinnerObject>().spinningSpeed = 1;
-                        tweenCont = DOTween.To(() => GetComponent<SpinnerObject>().spinningSpeed, x => GetComponent<SpinnerObject>().spinningSpeed = x, 50f, (float)MasterTick.timePerBeat * 4).SetEase(rotease);
+                        tweenCont = DOTween.To(() => GetComponent<SpinnerObject>().spinningSpeed, x => GetComponent<SpinnerObject>().spinningSpeed = x, 10f, (float)MasterTick.timePerBeat * 4).SetEase(rotease);
                     });
                     break;
                 }

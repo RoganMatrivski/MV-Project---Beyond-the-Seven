@@ -42,8 +42,7 @@ public class ChangeScene : MonoBehaviour {
                 loadingProgbar.value = 1f;
 
                 loadingText.text = "Complete!";
-
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(1);
                 sceneAO.allowSceneActivation = true;
             }
             Debug.Log(sceneAO.progress);

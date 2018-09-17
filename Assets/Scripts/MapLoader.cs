@@ -14,6 +14,8 @@ public class MapLoader : MonoBehaviour {
 
     Item map;
 
+    public LayerMask ignoredCollision;
+
     public TextAsset mapText;
 
     public float defaultSpeed = 10f;
@@ -133,27 +135,82 @@ public class MapLoader : MonoBehaviour {
     public Transform SphereObj;
     public Transform GiantSphereObj;
 
+    Vector3 randomRotation(bool collideWithObject)
+    {
+        //while (true)
+        for (int i = 0; i< 50; i++)
+        {
+            Vector3 randRot = new Vector3(Random.Range(0, 360), Random.Range(0, 360), 1);
+
+            if (collideWithObject)
+                return randRot;
+
+            RaycastHit hit = new RaycastHit();
+            if (!Physics.Raycast(transform.position, randRot, ignoredCollision))
+            {
+                //Debug.DrawLine(transform.position, hit.point, Color.green);
+
+                //Debug.Log(hit);
+
+                return randRot;
+            }
+
+            Debug.DrawLine(transform.position, hit.point, Color.red); return randRot;
+
+            //Debug.Log(hit);
+        }
+        //Debug.Log("can't find any object to hit, already passed the threshold number of loop.");
+        return new Vector3();
+    }
+
+    Vector3 randomRotation()
+    {
+        return new Vector3(Random.Range(0, 360), Random.Range(0, 360), 1);
+    }
+
+    Vector3 randomRotationToCamera(int multiplier)
+    {
+        var dir = GameObject.FindGameObjectWithTag("MainCamera").transform.position - transform.position;
+        Quaternion rot = Quaternion.FromToRotation(Vector3.up, dir);
+
+        Quaternion randRot = Quaternion.Euler(new Vector3(Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier)));
+
+        Quaternion totalRot = rot * randRot;
+
+        return totalRot.eulerAngles;
+    }
+
+    Vector3 randomRotationToCamera(bool collideWithObject, int multiplier)
+    {
+        var dir = GameObject.FindGameObjectWithTag("MainCamera").transform.position - transform.position;
+
+        Quaternion rot = Quaternion.FromToRotation(Vector3.up, dir);
+
+        while (true)
+        {
+            Vector3 randRot = new Vector3(Random.Range(0, 360), Random.Range(0, 360), 1);
+            Quaternion totalRot = rot * Quaternion.Euler(randRot);
+
+            if (collideWithObject)
+                return totalRot.eulerAngles;
+
+            if (!Physics.Raycast(transform.position, totalRot.eulerAngles, ignoredCollision))
+                return totalRot.eulerAngles;
+        }
+    }
 
     public IEnumerator PoleSpawn(int multipleSpawn, float objectSpeed, bool launchToCamera)
     {
         int multiplier = 25;
         for (int i = 0; i < multipleSpawn; i++)
         {
-            Vector3 randRotation = new Vector3(Random.Range(0, 360), Random.Range(0, 360), 1); //Vector3([X], [Y], [Z])
-
-            //Vector3 randRotation = new Vector3(Random.Range(xAngle.x, xAngle.y), Random.Range(yAngle.x, yAngle.y), 1); //Vector3([X], [Y], [Z])
-            Vector3 randRot = new Vector3(Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier));
-            //Debug.Log(randRot);
-
             Transform obj = Instantiate(PoleObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
             if (launchToCamera)
             {
-                var dir = GameObject.FindGameObjectWithTag("MainCamera").transform.position - transform.position;
-                obj.transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-                obj.Rotate(randRot);
+                obj.Rotate(randomRotationToCamera(false, multiplier));
             }
             else
-                obj.Rotate(randRotation);
+                obj.Rotate(randomRotation(false));
         }
 
         yield return null;
@@ -169,22 +226,14 @@ public class MapLoader : MonoBehaviour {
 
             float randomSpeed = objectSpeed + (Random.Range(-1f, 1f) * (objectSpeed * randomizedPercent));
 
-            Vector3 randRotation = new Vector3(Random.Range(0, 360), Random.Range(0, 360), 1); //Vector3([X], [Y], [Z])
-
-            //Vector3 randRotation = new Vector3(Random.Range(xAngle.x, xAngle.y), Random.Range(yAngle.x, yAngle.y), 1); //Vector3([X], [Y], [Z])
-            Vector3 randRot = new Vector3(Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier));
-            //Debug.Log(randRot);
-
             Transform obj = Instantiate(SphereObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
 
             if (launchToCamera)
             {
-                var dir = GameObject.FindGameObjectWithTag("MainCamera").transform.position - transform.position;
-                obj.transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-                obj.Rotate(randRot);
+                obj.Rotate(randomRotationToCamera(false, multiplier));
             }
             else
-                obj.Rotate(randRotation);
+                obj.Rotate(randomRotation(false)); ;
 
             obj.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * randomSpeed, ForceMode.VelocityChange);
         }
@@ -204,22 +253,14 @@ public class MapLoader : MonoBehaviour {
 
             float randomSpeed = objectSpeed + (Random.Range(-1f, 1f) * (objectSpeed * randomizedPercent));
 
-            Vector3 randRotation = new Vector3(Random.Range(0, 360), Random.Range(0, 360), 1); //Vector3([X], [Y], [Z])
-
-            //Vector3 randRotation = new Vector3(Random.Range(xAngle.x, xAngle.y), Random.Range(yAngle.x, yAngle.y), 1); //Vector3([X], [Y], [Z])
-            Vector3 randRot = new Vector3(Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier), Random.Range(-1 * multiplier, 1 * multiplier));
-            //Debug.Log(randRot);
-
             Transform obj = Instantiate(GiantSphereObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
 
             if (launchToCamera)
             {
-                var dir = GameObject.FindGameObjectWithTag("MainCamera").transform.position - transform.position;
-                obj.transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-                obj.Rotate(randRot);
+                obj.Rotate(randomRotationToCamera(false, multiplier));
             }
             else
-                obj.Rotate(randRotation);
+                obj.Rotate(randomRotation(false));
 
             obj.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * randomSpeed, ForceMode.VelocityChange);
         }

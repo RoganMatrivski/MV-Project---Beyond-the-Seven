@@ -49,20 +49,45 @@ public class MasterTick : MonoBehaviour
     AudioSource song;
 
     [SerializeField]
+    float audioDelay = 4; //to give chance to totally load things.
+
+    [SerializeField]
     [Range(0, 5)]
-    float audioRate;
+    private readonly float audioRate = 1;
+
+    //[HideInInspector]
+    public int tick;
+
+    [SerializeField]
+    bool songPlayed = false;
+
+    float time;
 
     void Start()
     {
+        tick = 32;
+
         double startTick = AudioSettings.dspTime;
         sampleRate = AudioSettings.outputSampleRate;
         nextTick = startTick * sampleRate;
         running = true;
 
         song = GetComponent<AudioSource>();
-        song.PlayScheduled(0);
 
         onTickEvent += onTick;
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+
+        if (time > audioDelay && !songPlayed)
+        {
+            song.Play();
+            songPlayed = true;
+
+            tick = 32;
+        }
     }
 
     void OnAudioFilterRead(float[] data, int channels)
@@ -89,6 +114,8 @@ public class MasterTick : MonoBehaviour
             while (sample + n >= nextTick)
             {
                 nextTick += samplesPerTick;
+
+                tick++;
 
                 //if (onTickEvent != null)
                 //    onTickEvent();
