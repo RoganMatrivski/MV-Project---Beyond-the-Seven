@@ -7,6 +7,9 @@ TagManager:
   - MasterTick
   - RewindControl
   - SpawnedObject
+  - FX
+  - VCam
+  - Canvas
   layers:
   - Default
   - TransparentFX

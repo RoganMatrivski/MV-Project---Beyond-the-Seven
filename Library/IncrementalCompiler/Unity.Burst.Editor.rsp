@@ -2,10 +2,10 @@
 -target:library
 -nowarn:0169
 -langversion:7
--out:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Temp/Unity.Burst.Editor.dll
+-out:D:/TestingObjSpawn3/Temp/Unity.Burst.Editor.dll
 -nostdlib
 -unsafe
--r:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Library/ScriptAssemblies/Unity.Burst.dll
+-r:D:/TestingObjSpawn3/Library/ScriptAssemblies/Unity.Burst.dll
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -85,12 +85,12 @@
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
 -r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
--r:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/Demigiant/DOTween/DOTween.dll
--r:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/Demigiant/DOTween/DOTween43.dll
--r:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/Demigiant/DOTween/DOTween46.dll
--r:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/Demigiant/DOTween/DOTween50.dll
--r:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll
--r:C:/Users/RoganMatrivski/Documents/TestingObjSpawn3/Assets/Plugins/Newtonsoft.Json.dll
+-r:D:/TestingObjSpawn3/Assets/Demigiant/DOTween/DOTween.dll
+-r:D:/TestingObjSpawn3/Assets/Demigiant/DOTween/DOTween43.dll
+-r:D:/TestingObjSpawn3/Assets/Demigiant/DOTween/DOTween46.dll
+-r:D:/TestingObjSpawn3/Assets/Demigiant/DOTween/DOTween50.dll
+-r:D:/TestingObjSpawn3/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll
+-r:D:/TestingObjSpawn3/Assets/Plugins/Newtonsoft.Json.dll
 -r:C:/Users/RoganMatrivski/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.collections@0.0.9-preview.2/System.Runtime.CompilerServices.Unsafe.dll
 -r:C:/Users/RoganMatrivski/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.render-pipelines.core@3.0.0-preview/CoreRP/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll
 -r:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"

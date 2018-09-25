@@ -34,8 +34,6 @@ public class AnimateDiamond1 : MonoBehaviour {
     {
         MasterTick = GameObject.FindGameObjectWithTag("MasterTick").GetComponent<MasterTick>();
         MasterTick.onTickEvent += onTick;
-
-        DOTween.Init();
     }
 
 	// Update is called once per frame

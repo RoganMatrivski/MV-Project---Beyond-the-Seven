@@ -22,11 +22,11 @@
 //
 using UnityEngine;
 
+using UnityEngine.Rendering.PostProcessing;
+
 namespace Kino
 {
-    [ExecuteInEditMode]
-    [RequireComponent(typeof(Camera))]
-    [AddComponentMenu("Kino Image Effects/Analog Glitch")]
+    [System.Serializable]
     public class AnalogGlitch : MonoBehaviour
     {
         #region Public Properties

@@ -20,6 +20,8 @@ MonoBehaviour:
   - {fileID: 114433508221648230}
   - {fileID: 114880497500383614}
   - {fileID: 114012582077140500}
+  - {fileID: 114557885592543392}
+  - {fileID: 114373157448754586}
 --- !u!114 &114012582077140500
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1430,6 +1432,24 @@ MonoBehaviour:
   kernelSize:
     overrideState: 1
     value: 1
+--- !u!114 &114373157448754586
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d41a9a851f0e14c95d4fd5c2a5eee8, type: 3}
+  m_Name: fadeBlack
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  blend:
+    overrideState: 1
+    value: 0
 --- !u!114 &114381137020830908
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1476,6 +1496,24 @@ MonoBehaviour:
   colorIntensity:
     overrideState: 1
     value: 0.5
+--- !u!114 &114557885592543392
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1831c6bbd97e9b4e89c8b6aa4a184b2, type: 3}
+  m_Name: fadeWhite
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 0
+  blend:
+    overrideState: 1
+    value: 0
 --- !u!114 &114581791522849620
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1564,10 +1602,10 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 0.309
+    value: 0.155
   size:
     overrideState: 1
-    value: 0.62
+    value: 0.57
   lumContrib:
     overrideState: 0
     value: 0.8

@@ -6,22 +6,13 @@ using Newtonsoft.Json;
 
 using UnityEngine.SceneManagement;
 
-public class saveConfiguration : MonoBehaviour {
-    private MasterTick masterTick;
+public static class saveConfiguration {
+    private static MasterTick masterTick;
 
-    // Use this for initialization
-    void Start()
+    public static void saveConf()
     {
         masterTick = GameObject.FindGameObjectWithTag("MasterTick").GetComponent<MasterTick>();
-    }
 
-    // Update is called once per frame
-    void Update () {
-
-	}
-
-    public void saveConf()
-    {
         config conf = new config();
 
         conf.offset = masterTick.offset;

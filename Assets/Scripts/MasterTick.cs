@@ -1,17 +1,14 @@
-﻿using UnityEngine;
-using System.Collections;
-
-using UnityEngine.Serialization;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 using System;
-
-// The code example shows how to implement a metronome that procedurally generates the click sounds via the OnAudioFilterRead callback.
-// While the game is paused or the suspended, this time will not be updated and sounds playing will be paused. Therefore developers of music scheduling routines do not have to do any rescheduling after the app is unpaused
 
 [RequireComponent(typeof(AudioSource))]
 public class MasterTick : MonoBehaviour
 {
     public event Action onTickEvent;
+    public event Action onDelayComplete;
 
     [Header("BPM Settings")]
     [Tooltip("Beats Per Minutes")]
@@ -26,17 +23,14 @@ public class MasterTick : MonoBehaviour
     public int Subdivide = 1;
 
     [Tooltip("Offsets")]
-    [Range(-1000, 1000)]
+    [Range(-500, 500)]
     [SerializeField]
     //[HideInInspector]
     public int offset = 0;
 
-    //public double bpm = 140.0F;
-    //public float gain = 0.5F;
-    //public int signatureHi = 4;
-    //public int signatureLo = 4;
-    private double nextTick = 0.0F;
-    private double sampleRate = 0.0F;
+    [SerializeField]
+    AudioSource song;
+
     private bool running = false;
 
     [HideInInspector]
@@ -46,88 +40,80 @@ public class MasterTick : MonoBehaviour
     public double timePerBeat;
 
     [SerializeField]
-    AudioSource song;
-
-    [SerializeField]
-    float audioDelay = 4; //to give chance to totally load things.
-
-    [SerializeField]
     [Range(0, 5)]
-    private readonly float audioRate = 1;
+    public float audioRate = 1;
 
     //[HideInInspector]
-    public int tick;
+    public int tick = 32;
 
     [SerializeField]
     bool songPlayed = false;
 
-    float time;
+    public float time;
+    public int timeSample;
 
+    private double nextTick;
+
+    //==============================================================
+
+    private float tempAudioRate;
+    public void PauseTick()
+    {
+        tempAudioRate = audioRate;
+        audioRate = 0;
+    }
+
+    public void RunTick()
+    {
+        audioRate = tempAudioRate;
+    }
+
+    // Use this for initialization
     void Start()
     {
-        tick = 32;
-
-        double startTick = AudioSettings.dspTime;
-        sampleRate = AudioSettings.outputSampleRate;
-        nextTick = startTick * sampleRate;
-        running = true;
-
         song = GetComponent<AudioSource>();
 
         onTickEvent += onTick;
+
+        //================
+        song.Play();
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        time += Time.deltaTime;
+        Time.timeScale = audioRate;
 
-        if (time > audioDelay && !songPlayed)
-        {
-            song.Play();
-            songPlayed = true;
-
-            tick = 32;
-        }
+        song.pitch = audioRate;
     }
 
-    void OnAudioFilterRead(float[] data, int channels)
+    private void OnAudioFilterRead(float[] data, int channels)
     {
-        if (!running)
-            return;
-
         UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
-            song.pitch = audioRate;
-            Time.timeScale = audioRate;
+            timeSample = song.timeSamples;
+            time = song.time;
         });
 
-        timePerBeat = 60.0f / bpm;
+        if (audioRate > 0)
+            timePerBeat = 60.0f / bpm / audioRate;
+        else
+            timePerBeat = 60.0f / bpm / audioRate;
 
-        timePerTick = 60.0f / bpm / (float)Subdivide;
+        timePerTick = timePerBeat / (float)Subdivide;
 
-        double samplesPerTick = sampleRate * 60.0F / bpm * (1.0f / (double)Subdivide) / audioRate; // change 1.0F to
-        double sample = (AudioSettings.dspTime + ((float)offset / 1000)) * sampleRate;
-        int dataLen = data.Length / channels;
-        int n = 0;
-        while (n < dataLen)
+        if (time > nextTick)
         {
-            while (sample + n >= nextTick)
-            {
-                nextTick += samplesPerTick;
+            nextTick += timePerTick;
 
-                tick++;
+            tick++;
 
-                //if (onTickEvent != null)
-                //    onTickEvent();
-
-                onTickEvent?.Invoke(); //the same as the above
-            }
-            n++;
+            onTickEvent?.Invoke();
         }
     }
 
     void onTick()
     {
-        //Debug.Log("Tick");
+        Debug.Log("tick");
     }
 }
