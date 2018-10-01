@@ -1856,7 +1856,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4
   mapText: {fileID: 4900000, guid: e53e9a570dcd89846bc20e288e81cce7, type: 3}
-  defaultSpeed: 50
+  defaultSpeed: 25
   PoleObj: {fileID: 4423734932314384, guid: 8386dba4f30d691428efab488be5ea77, type: 2}
   SphereObj: {fileID: 4120358877667192, guid: 5b89628d081d03d4d96a5b78044e22a7, type: 2}
   GiantSphereObj: {fileID: 4361982054662560, guid: a1abb173d7841b34ab31e7f505a2e637,
@@ -6177,8 +6177,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1247212608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0, z: -0.05}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12

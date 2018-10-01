@@ -331,6 +331,8 @@
 -i:D:/TestingObjSpawn3/Assets/Kino/Glitch/DigitalGlitch.cs
 -i:D:/TestingObjSpawn3/Assets/PostProcess/fadeBlack.cs
 -i:D:/TestingObjSpawn3/Assets/PostProcess/fadeWhite.cs
+-i:D:/TestingObjSpawn3/Assets/PostProcess/Overlayer.cs
+-i:D:/TestingObjSpawn3/Assets/PostProcess/SimpleInvert.cs
 -i:D:/TestingObjSpawn3/Assets/PostProcess/TestSetter.cs
 -i:D:/TestingObjSpawn3/Assets/Scripts/AnimateDiamond1.cs
 -i:D:/TestingObjSpawn3/Assets/Scripts/camAnimator.cs

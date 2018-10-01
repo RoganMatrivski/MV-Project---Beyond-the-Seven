@@ -16,6 +16,7 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
 
     public GameObject[] crystals = new GameObject[3];
     public GameObject diamonds;
+    public Overlayer glitch;
 
     int tick = 32;
 
@@ -71,6 +72,7 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
                     dispatch.Enqueue(() =>
                     {
                         GameObject.FindGameObjectWithTag("RewindControl").GetComponent<rewindControl>().rewind = true;
+                        glitch.showGlitch();
 
                         //Debug.Log("triggered at 928");
                     });
@@ -83,6 +85,7 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
                     dispatch.Enqueue(() =>
                     {
                         GameObject.FindGameObjectWithTag("RewindControl").GetComponent<rewindControl>().rewind = false;
+                        glitch.stopGlitch();
 
                         //Debug.Log("triggered at 936");
                     });
@@ -95,6 +98,7 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
                     dispatch.Enqueue(() =>
                     {
                         GameObject.FindGameObjectWithTag("RewindControl").GetComponent<rewindControl>().rewind = true;
+                        glitch.showGlitch();
 
                         //Debug.Log("triggered at 928");
                     });
@@ -107,6 +111,7 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
                     dispatch.Enqueue(() =>
                     {
                         GameObject.FindGameObjectWithTag("RewindControl").GetComponent<rewindControl>().rewind = false;
+                        glitch.stopGlitch();
 
                         //Debug.Log("triggered at 936");
                     });
@@ -146,6 +151,7 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
                     dispatch.Enqueue(() =>
                     {
                         crystals[0].GetComponent<Renderer>().material.DOFloat(5, "_obj_glow", (float)MasterTick.timePerBeat * 7);
+                        crystals[0].transform.DOMoveY(2f, (float)MasterTick.timePerBeat * 7);
                     });
                     break;
                 }

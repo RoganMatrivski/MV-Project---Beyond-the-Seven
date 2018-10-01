@@ -20,9 +20,13 @@ public class MapLoader : MonoBehaviour {
 
     public float defaultSpeed = 10f;
 
+    public Vector3 coordinate;
+
     // Use this for initialization
     void Start()
     {
+        coordinate = GameObject.FindGameObjectWithTag("SpawnedObject").transform.position;
+
         //map = mapObjects.GetComponent<FileToMap>().temp;
 
         MasterTick = GameObject.FindGameObjectWithTag("MasterTick").GetComponent<MasterTick>();
@@ -204,7 +208,7 @@ public class MapLoader : MonoBehaviour {
         int multiplier = 25;
         for (int i = 0; i < multipleSpawn; i++)
         {
-            Transform obj = Instantiate(PoleObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
+            Transform obj = Instantiate(PoleObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform.position, GameObject.FindGameObjectWithTag("SpawnedObject").transform.rotation, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
             if (launchToCamera)
             {
                 obj.Rotate(randomRotationToCamera(false, multiplier));
@@ -226,7 +230,7 @@ public class MapLoader : MonoBehaviour {
 
             float randomSpeed = objectSpeed + (Random.Range(-1f, 1f) * (objectSpeed * randomizedPercent));
 
-            Transform obj = Instantiate(SphereObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
+            Transform obj = Instantiate(SphereObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform.position, GameObject.FindGameObjectWithTag("SpawnedObject").transform.rotation, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
 
             if (launchToCamera)
             {
@@ -253,7 +257,7 @@ public class MapLoader : MonoBehaviour {
 
             float randomSpeed = objectSpeed + (Random.Range(-1f, 1f) * (objectSpeed * randomizedPercent));
 
-            Transform obj = Instantiate(GiantSphereObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform);
+            Transform obj = Instantiate(GiantSphereObj, GameObject.FindGameObjectWithTag("SpawnedObject").transform, true);
 
             if (launchToCamera)
             {
