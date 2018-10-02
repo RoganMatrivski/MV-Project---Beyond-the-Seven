@@ -10,6 +10,11 @@ public class MasterTick : MonoBehaviour
     public event Action onTickEvent;
     public event Action onDelayComplete;
 
+    [Header("Play Option")]
+    [Tooltip("Play After Wake")]
+    [SerializeField]
+    bool playAfterWake = true;
+
     [Header("BPM Settings")]
     [Tooltip("Beats Per Minutes")]
     [Range(30, 240)]
@@ -54,9 +59,11 @@ public class MasterTick : MonoBehaviour
 
     private double nextTick;
 
+    //private float tempoffset;
+
     //==============================================================
 
-    private float tempAudioRate;
+    private float tempAudioRate = 1;
     public void PauseTick()
     {
         tempAudioRate = audioRate;
@@ -68,6 +75,11 @@ public class MasterTick : MonoBehaviour
         audioRate = tempAudioRate;
     }
 
+    public void InitRunTick()
+    {
+        song.Play();
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -76,7 +88,8 @@ public class MasterTick : MonoBehaviour
         onTickEvent += onTick;
 
         //================
-        song.Play();
+        if (playAfterWake)
+            song.Play();
     }
 
     // Update is called once per frame
@@ -89,16 +102,17 @@ public class MasterTick : MonoBehaviour
 
     private void OnAudioFilterRead(float[] data, int channels)
     {
+        //tempoffset = (float)offset / 1000;
         UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
             timeSample = song.timeSamples;
-            time = song.time;
+            time = song.time + (float)offset / 1000;
         });
 
         if (audioRate > 0)
-            timePerBeat = 60.0f / bpm / audioRate;
+            timePerBeat = 60.0f / bpm;
         else
-            timePerBeat = 60.0f / bpm / audioRate;
+            timePerBeat = 60.0f / bpm;
 
         timePerTick = timePerBeat / (float)Subdivide;
 

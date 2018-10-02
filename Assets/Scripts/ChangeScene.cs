@@ -11,16 +11,20 @@ using TMPro;
 public class ChangeScene : MonoBehaviour {
 
     AsyncOperation sceneAO;
-    [SerializeField] Slider loadingProgbar;
-    [SerializeField] TextMeshProUGUI loadingText;
+    public float loadProgress;
+
+    public bool DEBUG_LoadScene;
+
+    [SerializeField]
+    private string loadSceneString;
 
     // the actual percentage while scene is fully loaded
     private const float LOAD_READY_PERCENTAGE = 0.9f;
 
     private void Start()
     {
-        loadingText.text = "LOADING...";
-        StartCoroutine(LoadingSceneRealProgress("MainScene"));
+        if (DEBUG_LoadScene)
+            StartCoroutine(LoadingSceneRealProgress(loadSceneString));
     }
 
     IEnumerator LoadingSceneRealProgress(string sceneName)
@@ -35,13 +39,12 @@ public class ChangeScene : MonoBehaviour {
         while (!sceneAO.isDone)
         {
             Debug.Log("Progress : " + sceneAO.progress);
-            loadingProgbar.value = sceneAO.progress;
+            loadProgress = sceneAO.progress;
 
             if (sceneAO.progress >= LOAD_READY_PERCENTAGE)
             {
-                loadingProgbar.value = 1f;
+                loadProgress = 1f;
 
-                loadingText.text = "Complete!";
                 yield return new WaitForSeconds(4);
                 sceneAO.allowSceneActivation = true;
             }

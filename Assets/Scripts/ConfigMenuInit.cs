@@ -26,30 +26,10 @@ public class ConfigMenuInit : MonoBehaviour {
 
         //masterTick.onDelayComplete += onDelayFinish;
 
-        StartCoroutine(run());
-
-    }
-
-    private void OnEnable()
-    {
-        startADSP = AudioSettings.dspTime;
-
-        SceneManager.sceneLoaded += onLoadFinish;
-    }
-
-    void onLoadFinish(Scene scene, LoadSceneMode mode)
-    {
-        delayADSP = AudioSettings.dspTime;
-
         onDelayFinish();
-    }
 
-    IEnumerator run()
-    {
+        //masterTick.RunTick();
 
-        masterTick.RunTick();
-
-        yield return null;
     }
 
     void onDelayFinish()

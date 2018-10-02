@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -168,16 +168,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2acde2a753033b408109de1314615df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playAfterWake: 1
   bpm: 120
   Subdivide: 1
   offset: 0
+  song: {fileID: 0}
   timePerTick: 0
   timePerBeat: 0
-  song: {fileID: 0}
-  audioDelay: 4
   audioRate: 1
   tick: 0
   songPlayed: 0
+  time: 0
+  timeSample: 0
 --- !u!82 &91686236
 AudioSource:
   m_ObjectHideFlags: 0
@@ -188,7 +190,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1a604a3f9d3ef4f41ab1303fbaf1341c, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
   Loop: 1
@@ -391,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &112542661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -631,8 +633,8 @@ Camera:
   m_GameObject: {fileID: 134188024}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1346,7 +1348,6 @@ GameObject:
   m_Component:
   - component: {fileID: 706635405}
   - component: {fileID: 706635404}
-  - component: {fileID: 706635406}
   m_Layer: 0
   m_Name: Init
   m_TagString: Untagged
@@ -1367,6 +1368,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   black: {fileID: 112542662}
   audio: {fileID: 91686236}
+  startADSP: 0
+  delayADSP: 0
 --- !u!4 &706635405
 Transform:
   m_ObjectHideFlags: 0
@@ -1380,17 +1383,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &706635406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 706635403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10155970d5f513f44a11e2e9272a2a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &826288383
 GameObject:
   m_ObjectHideFlags: 0
