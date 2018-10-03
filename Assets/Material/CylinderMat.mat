@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: CylinderMat
-  m_Shader: {fileID: 4800000, guid: ec40252c889a8d84aa1de349e9990796, type: 3}
+  m_Shader: {fileID: 4800000, guid: f83af897bcdbbdc42823cf3dcbb5e061, type: 3}
   m_ShaderKeywords: _OBJ_BOOL_GLOW_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -93,7 +93,7 @@ Material:
     m_Colors:
     - _Color: {r: 0.9056604, g: 0, b: 0.6712543, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainTex: {r: 0, g: 0.7157781, b: 1, a: 1}
+    - _MainTex: {r: 0.4292453, g: 0.83884573, b: 1, a: 1}
     - _MyColor: {r: 0, g: 0.6912031, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _obj_color: {r: 0.25098038, g: 0.6865516, b: 1, a: 1}

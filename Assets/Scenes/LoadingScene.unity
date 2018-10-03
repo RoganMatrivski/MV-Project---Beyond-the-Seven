@@ -147,7 +147,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 599.09, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373479551
 MonoBehaviour:
@@ -168,7 +168,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Testinghaha
+  m_text: random subtitle text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 13.5
+  m_fontSizeBase: 13.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -236,10 +236,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 373479551}
-    characterCount: 11
+    characterCount: 20
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -282,15 +282,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomtext:
   - Removing the Bees...
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Playing NotITG...
+  - Purging LoveLive! Fans...
+  - Reading Arifureta...
+  - Sightreading Mawaru's Series...
+  - Spreading Sirius-ism..
+  - Finding Portal to Another World...
+  - Self-loathing...
+  - Findng Out Who Spot The Missing "i"...
+  - Pls donate
+  - It's New! Alpha! And also Fragile! (pls don't force your poor computer)
+  - what the *heck* did you just *heck*ing say about me, youi little bitch? i'll have
+    you know i graduated top of my class in the navy seals, and i've been involved
+    in numerous secret raids on al-quaeda, and i have over 300 confirmed kills. i
+    am trained in gorilla warfare and i'm the top sniper in the entire US armed forces.
+    you are nothing to me but just another target. i will wipe you the *heck* out
+    with precision the likes of which has never been seen before on this earth. mark
+    my *heck*ing words. you think you can get away with saying that shit to me over
+    the internet? think again *heck*er. as we speak i am contacting my secret network
+    of spies accross the USA and your IP is being traced right now so you better prepare
+    for the storm, maggot. the storm that wipes out the pathetic little thing you
+    call your life. you're *heck*ing dead, kid. i can be anywhere, anytime, and i
+    can kill you in over seven hundred ways, and that's just with my bare hands. not
+    only am i extensively trained in unarmed combat, but i have access to the entire
+    arsenal of the United States Marine Corps and i will use it to it's full extent
+    to wipe your miserable ass off the face of the continent, you little shit. if
+    only you could have know what unholy retribution your little "clever" comment
+    was about to bring down upon you, maybe you would have held your *heck*ing tongue.
+    but you couldn't, you didn't. and now you're paying the price, you goddamn idiout.
+    i will shit fury all over you and you will drown in it. you're *heck*ing dead,
+    kiddo. \n\n(i wasted my time on this)
+  - 1 2 2 50
+  - That's right! We slip loss joke here. \n(1 2 2 50)
+  - Is this broken?
+  - gimme munie
 --- !u!1 &466749579
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,9 +605,9 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1320315680}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -759,7 +784,7 @@ Camera:
   m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -991,7 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadProgress: 0
-  DEBUG_LoadScene: 0
+  DEBUG_LoadScene: 1
   loadSceneString: MainSceneNoSRP
 --- !u!4 &1635597704
 Transform:

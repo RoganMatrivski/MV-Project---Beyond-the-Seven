@@ -223,12 +223,12 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
                     break;
                 }
 
-            case 2304: //Fade to black
+            case 2304-8*4: //Fade to black
                 {
                     dispatch.Enqueue(() =>
                     {
                         //DOTween.To(() => fx.blackMix, x => fx.blackMix = x, 1, (float)MasterTick.timePerBeat*4);
-                        Image.BlackFlashFade(0, 1, (float)MasterTick.timePerBeat).onComplete += () => Image.BlackDuplicate(1);
+                        Image.BlackFlashFade(0, 1, (float)MasterTick.timePerBeat*4).onComplete += () => Image.BlackDuplicate(1);
                     });
                     break;
                 }

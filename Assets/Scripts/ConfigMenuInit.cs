@@ -16,10 +16,6 @@ public class ConfigMenuInit : MonoBehaviour {
 
     MasterTick masterTick;
 
-    public double startADSP;
-
-    public double delayADSP;
-
     // Use this for initialization
     void Start () {
         masterTick = GameObject.FindGameObjectWithTag("MasterTick").GetComponent<MasterTick>();

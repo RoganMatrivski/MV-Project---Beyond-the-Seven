@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 using UnityEngine.SceneManagement;
 
 public static class saveConfiguration {
+    public static string configurationPath = Application.dataPath + "\\settings.json";
+
     private static MasterTick masterTick;
 
     public static void saveConf()
@@ -17,7 +19,7 @@ public static class saveConfiguration {
 
         conf.offset = masterTick.offset;
 
-        using (System.IO.StreamWriter file = System.IO.File.CreateText(Application.dataPath + "\\settings.json"))
+        using (System.IO.StreamWriter file = System.IO.File.CreateText(configurationPath))
         {
             JsonSerializer serializer = new JsonSerializer();
             serializer.Serialize(file, conf);
