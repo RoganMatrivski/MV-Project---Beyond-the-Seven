@@ -11,6 +11,6 @@ public class RandomText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GetComponent<TextMeshProUGUI>().text = randomtext[Random.Range(0, randomtext.Length - 1)];
+        GetComponent<TextMeshProUGUI>().SetText(randomtext[Random.Range(0, randomtext.Length - 1)]);
 	}
 }

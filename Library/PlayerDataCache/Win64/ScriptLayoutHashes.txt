@@ -1,11 +1,13 @@
 WindowsStandalone
 PlayerPath?
-D:/DELETE_AFTER/GameBuildAlpha1_Private2/TestingObjSpawn3.exe
+D:/DELETE_AFTER/GameBuildAlpha2_Dist/Beyond The Seven MV.exe
 SceneListBegin?
 Assets/Scenes/Preload.unity
 Assets/Scenes/ConfigurationMenu.unity
 Assets/Scenes/LoadingScene.unity
 Assets/Scenes/MainSceneNoSRP.unity
+Assets/Scenes/LoadingScene_Credits.unity
+Assets/Scenes/Credit.unity
 SceneListEnd?
 410153df6407a5a123cf4dcd4ccb7de8 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessLayer
 486cd95c82d8305219c352c06b776e1f Unity.Transforms.dll:Unity.Transforms.RotationComponent
@@ -16,9 +18,10 @@ SceneListEnd?
 a225cc34ee7b5f0b51d003f2b05a6a14 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.ColorGrading
 c97706b732fa7d912f8ccb2d66dc1086 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.LensDistortion
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
-877b01ea52dc72bc8b8b05fb50ad1809 Assembly-CSharp.dll:.sceneAnimator_REDUX_2nd
+31c63997be5c7a42e32dea048b0509a7 Assembly-CSharp.dll:.sceneAnimator_REDUX_2nd
 9bf8ae6b9fc1cafdbaa4c65b6c678675 Unity.RenderPipelines.Core.Runtime.dll:UnityEngine.Experimental.Rendering.Volume
 7b803eb2910e9b4cd5e521ae07b9f7d6 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
+d5d4955f54e720efd4dadf4ebb9c9486 Assembly-CSharp.dll:UTJ.FrameCapturer.AudioRecorder
 486cd95c82d8305219c352c06b776e1f Unity.Transforms.dll:Unity.Transforms.MoveForwardComponent
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -43,6 +46,8 @@ efc286bb5522768c035fbc62441a13fe Assembly-CSharp.dll:.FileToMap
 51caf96835915c60d7d17d8b0114bddb Assembly-CSharp.dll:.Overlayer
 b14b4630cc47b6e9ea8a644551a6a8cc Unity.TextMeshPro.dll:TMPro.TMP_Text
 ae697b0738357fa985eea8cd59e43cf7 Assembly-CSharp.dll:.MapLoader
+46d478a3366be74d75cc9163d13aa16c Assembly-CSharp.dll:.CreditText
+624002c8f50a57156e9cdebb761b2683 Assembly-CSharp.dll:UTJ.FrameCapturer.MovieRecorder
 fc7d604abee6ee9a6c5475396ecb412a Assembly-CSharp.dll:.SimpleInvert
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.AnimationPlayeer
 3d06f41c12c805d6680a0f771758459a Cinemachine.dll:Cinemachine.CinemachineCollisionImpulseSource
@@ -129,6 +134,7 @@ ac1558a744395c6350586abdf5cea589 Assembly-CSharp.dll:.DiamondTopAnim
 e608ccd9f3a11fb85a2e6458709a3d59 Unity.RenderPipelines.HighDefinition.Runtime.dll:UnityEngine.Experimental.Rendering.HDAdditionalReflectionData
 486cd95c82d8305219c352c06b776e1f Unity.Transforms.dll:Unity.Transforms.TransformParentComponent
 daea386c9a9028e042e71a041ad7639a Unity.RenderPipelines.HighDefinition.Runtime.dll:UnityEngine.Experimental.Rendering.HDPipeline.ContactShadows
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.Record
 22047f3c3fbb715550f61eddb26e9cd3 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.Vignette
 0093d93cda84567b28b6807f4c1209fe Assembly-CSharp.dll:.CrystalAnim
 956d1983289fee5aad6a13b219647a19 Unity.RenderPipelines.HighDefinition.Runtime.dll:UnityEngine.Experimental.Rendering.HDPipeline.ScreenSpaceReflection
@@ -172,6 +178,7 @@ a80c94133ae7687ac03f9b0199e6de5f Assembly-CSharp.dll:Kino.DigitalGlitch
 21004f82bccaced983eff02f0f6f8f92 Unity.RenderPipelines.Core.Runtime.dll:UnityEngine.Experimental.Rendering.UI.UIFoldout
 970e137a813cc65105401a5ef0432ac0 Unity.RenderPipelines.Core.Runtime.dll:UnityEngine.Experimental.Rendering.GPUCopyAsset
 4340409c5ea45c5ac2a5d38237300875 Cinemachine.dll:Cinemachine.NoiseSettings
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MouseHider
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.camAnimator
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.PreloadScene
 f58314b8bf8ddb9487ecf1dc187038a6 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessEffectSettings
@@ -259,7 +266,7 @@ b5a617ec0cda6df8bcfa21f8a0057a88 Assembly-CSharp.dll:.TestFlash
 5cd53758e254febdafbc2cbf649a0c20 Unity.RenderPipelines.Core.Runtime.dll:UnityEngine.Experimental.Rendering.UI.DebugUIHandlerFoldout
 72a8523b432c0a5317826b7a9e0a0e79 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 ba825bf41cd28c6ead317ff94d068ac0 Cinemachine.dll:Cinemachine.CinemachineMixingCamera
-1613d9860a0aff2b43707e7b40a7cc34 Assembly-CSharp.dll:.MasterTick
+9bc65921a254179dd33e45e1925e4556 Assembly-CSharp.dll:.MasterTick
 2ece0037d0fbada21d893e99d0675666 Unity.RenderPipelines.HighDefinition.Runtime.dll:UnityEngine.Experimental.Rendering.HDPipeline.PlanarReflectionProbe
 e53cc67d84060d628c7f03fc725766d8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 60c24672f752e597ba61f2e9197ca323 Cinemachine.dll:Cinemachine.Timeline.CinemachineShot
@@ -275,6 +282,7 @@ feb66edfb2bd120f78dd86db6d7b5b92 Cinemachine.dll:.CinemachineTouchInputMapper
 486cd95c82d8305219c352c06b776e1f Unity.Transforms.Hybrid.dll:Unity.Transforms.CopyInitialTransformFromGameObjectComponent
 1766ef42776fa1cfd93f82465836d860 Unity.RenderPipelines.HighDefinition.Runtime.dll:UnityEngine.Experimental.Rendering.HDPipeline.HDShadowSettings
 b4c7f64ae0b32f6a36837633d8b87c9c Assembly-CSharp.dll:.fadeBlack
+a048978380d44a799ba4111fb17daede Assembly-CSharp.dll:UTJ.FrameCapturer.GBufferRecorder
 486cd95c82d8305219c352c06b776e1f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 9d863b523b577f5c3d915351a74cd338 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -364,3 +372,5 @@ e50771eea249c6c8c44986aa8329a89a Assembly-CSharp.dll:Kino.AnalogGlitch
 588463edf4f62b4c490a4ead2bf11b4b Assembly-CSharp.dll:.loadingAnim
 e958cc1ee46a616a6e0cde964bfe9918 Unity.RenderPipelines.Core.Runtime.dll:UnityEngine.Experimental.Rendering.UI.DebugUIHandlerContainer
 aae9893fc05b6c8cba8317ed327be0c4 Unity.RenderPipelines.Core.Runtime.dll:UnityEngine.Experimental.Rendering.UI.DebugUIHandlerIndirectFloatField
+f803ae1fef5aa5e2d2f77718352baf2d Assembly-CSharp.dll:.ChangeScene_NoAutoLoad
+c21aa63954adcd2d020c5ac3c54a4ffd Assembly-CSharp.dll:.ExitButton

@@ -281,16 +281,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomtext:
-  - Removing the Bees...
-  - Playing NotITG...
-  - Purging LoveLive! Fans...
-  - Reading Arifureta...
-  - Sightreading Mawaru's Series...
-  - Spreading Sirius-ism..
+  - 'NullPointerException : "My_Will_To_Live" Have a Value of "null"'
+  - Ever Played StepMania? Try NotITG. It's Like StepMania, But on Drugs, and on Steroids.
+  - IM@S > LoveLive!
+  - This Project Crashed My Laptop For 100+ Times Already.
+  - How The *heck* Does "World Teacher" Is Not Licensed Yet?!
+  - Read SAO, But With Caution Please.
   - Finding Portal to Another World...
-  - Self-loathing...
-  - Findng Out Who Spot The Missing "i"...
-  - Pls donate
+  - oof
+  - Read Arifureta. It's Great.
+  - Pls donate me Munie
   - It's New! Alpha! And also Fragile! (pls don't force your poor computer)
   - what the *heck* did you just *heck*ing say about me, youi little bitch? i'll have
     you know i graduated top of my class in the navy seals, and i've been involved
@@ -313,9 +313,8 @@ MonoBehaviour:
     i will shit fury all over you and you will drown in it. you're *heck*ing dead,
     kiddo. \n\n(i wasted my time on this)
   - 1 2 2 50
-  - That's right! We slip loss joke here. \n(1 2 2 50)
+  - That's right! We slip loss joke here. (1 2 2 50)
   - Is this broken?
-  - gimme munie
 --- !u!1 &466749579
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +368,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speed: 5
+  speed: 2
   amount: 0
 --- !u!114 &466749582
 MonoBehaviour:
@@ -1025,7 +1024,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1635597702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 299.04593, y: 167.72847, z: 5.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

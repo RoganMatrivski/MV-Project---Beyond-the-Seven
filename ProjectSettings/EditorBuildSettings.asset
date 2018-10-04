@@ -14,10 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 2002be3849791524ca269b2980d2b6f0
-  - enabled: 0
-    path: Assets/Scenes/MainScene.unity
-    guid: ac63a59bc6fabc54185bfe7034240a6f
   - enabled: 1
     path: Assets/Scenes/MainSceneNoSRP.unity
     guid: dd01662fbab7f5548aacf3cf170e71a9
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene_Credits.unity
+    guid: 097bbdfc9f50dd3438106453cd9e22ec
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: 620d620c75b98774099005e6354f6bb0
+  - enabled: 0
+    path: Assets/Scenes/MainSceneNoSRP_ForRecording.unity
+    guid: 010f85ff6fbae234baeeafb0b3110ebe
   m_configObjects: {}

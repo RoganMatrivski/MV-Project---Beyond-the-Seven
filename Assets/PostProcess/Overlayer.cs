@@ -25,7 +25,7 @@ public class Overlayer : MonoBehaviour {
 
     public void stopGlitch()
     {
-        temp = DOTween.To(() => mix, x => mix = x, 0, 0.1f);
+        temp = DOTween.To(() => mix, x => mix = x, 0, 0.5f);
     }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)

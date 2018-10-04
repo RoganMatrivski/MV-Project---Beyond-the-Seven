@@ -63,6 +63,14 @@
     <Compile Include="Assets\CinemachinePostProcessingV2\Editor\CinemachinePostProcessingEditor.cs" />
     <Compile Include="Assets\Kino\Glitch\Editor\AnalogGlitchEditor.cs" />
     <Compile Include="Assets\Kino\Glitch\Editor\DigitalGlitchEditor.cs" />
+    <Compile Include="Assets\UTJ\FrameCapturer\Editor\AudioEncoderConfigDrawer.cs" />
+    <Compile Include="Assets\UTJ\FrameCapturer\Editor\AudioRecorderEditor.cs" />
+    <Compile Include="Assets\UTJ\FrameCapturer\Editor\GBufferRecorderEditor.cs" />
+    <Compile Include="Assets\UTJ\FrameCapturer\Editor\Misc\BoolDrawer.cs" />
+    <Compile Include="Assets\UTJ\FrameCapturer\Editor\Misc\DataPathDrawer.cs" />
+    <Compile Include="Assets\UTJ\FrameCapturer\Editor\MovieEncoderConfigDrawer.cs" />
+    <Compile Include="Assets\UTJ\FrameCapturer\Editor\MovieRecorderEditor.cs" />
+    <Compile Include="Assets\UTJ\FrameCapturer\Editor\RecorderBaseEditor.cs" />
     <Reference Include="Cinemachine">
       <HintPath>D:/TestingObjSpawn3/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>

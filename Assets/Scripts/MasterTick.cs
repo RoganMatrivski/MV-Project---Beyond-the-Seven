@@ -15,6 +15,11 @@ public class MasterTick : MonoBehaviour
     [SerializeField]
     bool playAfterWake = true;
 
+    [Header("Time Settings")]
+    [Tooltip("Use Standard Time Instead of Music Time")]
+    [SerializeField]
+    bool useStandardTime = false;
+
     [Header("BPM Settings")]
     [Tooltip("Beats Per Minutes")]
     [Range(30, 240)]
@@ -83,21 +88,50 @@ public class MasterTick : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        song = GetComponent<AudioSource>();
+        if (!useStandardTime)
+        {
+            song = GetComponent<AudioSource>();
 
-        onTickEvent += onTick;
+            onTickEvent += onTick;
 
-        //================
-        if (playAfterWake)
-            song.Play();
+            //================
+            if (playAfterWake)
+                song.Play();
+        }
+        else
+        {
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Time.timeScale = audioRate;
+        //Debug.Log(Time.timeScale);
+        if (!useStandardTime)
+        {
+            Time.timeScale = audioRate;
+            song.pitch = audioRate;
+        }
+        else
+        {
+            ticker();
+        }
+    }
 
-        song.pitch = audioRate;
+    void ticker() // The same as the one implemented below, but for standard timing
+    {
+        time += Time.deltaTime;
+
+        timePerBeat = 60.0f / bpm;
+        timePerTick = timePerBeat / (float)Subdivide;
+
+        if (time > nextTick + (float)offset / 1000)
+        {
+            nextTick += timePerTick;
+            tick++;
+            onTickEvent?.Invoke();
+        }
     }
 
     private void OnAudioFilterRead(float[] data, int channels)

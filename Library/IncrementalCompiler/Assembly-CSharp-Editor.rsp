@@ -344,4 +344,12 @@
 -i:D:/TestingObjSpawn3/Assets/CinemachinePostProcessingV2/Editor/CinemachinePostProcessingEditor.cs
 -i:D:/TestingObjSpawn3/Assets/Kino/Glitch/Editor/AnalogGlitchEditor.cs
 -i:D:/TestingObjSpawn3/Assets/Kino/Glitch/Editor/DigitalGlitchEditor.cs
+-i:D:/TestingObjSpawn3/Assets/UTJ/FrameCapturer/Editor/AudioEncoderConfigDrawer.cs
+-i:D:/TestingObjSpawn3/Assets/UTJ/FrameCapturer/Editor/AudioRecorderEditor.cs
+-i:D:/TestingObjSpawn3/Assets/UTJ/FrameCapturer/Editor/GBufferRecorderEditor.cs
+-i:D:/TestingObjSpawn3/Assets/UTJ/FrameCapturer/Editor/Misc/BoolDrawer.cs
+-i:D:/TestingObjSpawn3/Assets/UTJ/FrameCapturer/Editor/Misc/DataPathDrawer.cs
+-i:D:/TestingObjSpawn3/Assets/UTJ/FrameCapturer/Editor/MovieEncoderConfigDrawer.cs
+-i:D:/TestingObjSpawn3/Assets/UTJ/FrameCapturer/Editor/MovieRecorderEditor.cs
+-i:D:/TestingObjSpawn3/Assets/UTJ/FrameCapturer/Editor/RecorderBaseEditor.cs
 -v:0

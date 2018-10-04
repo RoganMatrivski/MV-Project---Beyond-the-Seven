@@ -25,6 +25,9 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
 
     public bool counterclockwise = false;
 
+    [SerializeField]
+    private bool exitAfterComplete = false;
+
     bool elapsed;
 
     // Use this for initialization
@@ -228,10 +231,20 @@ public class sceneAnimator_REDUX_2nd : MonoBehaviour {
                     dispatch.Enqueue(() =>
                     {
                         //DOTween.To(() => fx.blackMix, x => fx.blackMix = x, 1, (float)MasterTick.timePerBeat*4);
-                        Image.BlackFlashFade(0, 1, (float)MasterTick.timePerBeat*4).onComplete += () => Image.BlackDuplicate(1);
+                        Image.BlackFlashFade(0, 1, (float)MasterTick.timePerBeat*4).onComplete += () =>
+                        {
+                            if (!exitAfterComplete)
+                            {
+                                Image.BlackDuplicate(1);
+                                UnityEngine.SceneManagement.SceneManager.LoadScene("LoadingScene_Credits");
+                            }
+                            else
+                                Application.Quit();
+                        };
                     });
                     break;
                 }
+
         }
     }
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MainSceneNoSRP.unity
+- path: Assets/Scenes/MainSceneNoSRP_ForRecording.unity
   isLoaded: 1
   isActive: 1
